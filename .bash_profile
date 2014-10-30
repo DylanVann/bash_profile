@@ -12,3 +12,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 # Set ls to display symbols to indicate file/directory/symlink types.
 alias ls='ls -GFh'
+
+# ls Variations.
+alias ll='ls -alh'
+alias la='ls -A'
+alias l='ls -CFlh'
+alias lsd="ls -alF | grep /$"
