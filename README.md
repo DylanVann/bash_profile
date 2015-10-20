@@ -1,3 +1,3 @@
-# Dylan's Dotfiles
+# Dotfiles
 
 Terminally ill.
