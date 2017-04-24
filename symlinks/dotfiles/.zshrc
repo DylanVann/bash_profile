@@ -76,5 +76,5 @@ export DEFAULT_USER='dylan'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# tmuxinator completion
+source ~/.bin/tmuxinator.zsh
