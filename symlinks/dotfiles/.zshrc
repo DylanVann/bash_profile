@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh installation.
+# Pah to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
@@ -15,17 +15,23 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Rust
+export PATH=${PATH}:~/.cargo/bin
+
 # Java - jenv
 export PATH="$HOME/.jenv/bin:$PATH"
-export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 eval "$(jenv init -)"
+export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 export PATH=${JAVA_HOME}/bin:$PATH
 
 # Android
-export ANDROID_HOME="/usr/local/share/android-sdk"
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export PATH="/usr/local/Caskroom/android-sdk/25.2.3/tools:$PATH"
-export PATH="/usr/local/Caskroom/android-sdk/25.2.3/emulator/:$PATH"
+export ANDROID_HOME="/Users/dylan/Library/Android/sdk"
+export ANDROID_SDK="/Users/dylan/Library/Android/sdk"
+export ANDROID_NDK="/Users/dylan/Library/Android/android-ndk/android-ndk-r16b"
+export ANDROID_NDK_HOME="/Users/dylan/Library/Android/android-ndk/android-ndk-r16b"
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/tools/bin
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # gnubin
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -52,8 +58,24 @@ export DEFAULT_USER='dylan'
 # source ~/.bin/tmuxinator.zsh
 
 # fastlane
-export PATH="$HOME/.fastlane/bin/fastlane_lib:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
 
-cd ~/repos
+# cd ~/repos
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dylan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/dylan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dylan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/dylan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/dylan/n/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/dylan/n/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
