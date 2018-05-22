@@ -15,6 +15,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Rust
+export PATH=${PATH}:~/.cargo/bin
+
 # Java - jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
@@ -23,6 +26,9 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 # Android
 export ANDROID_HOME="/Users/dylan/Library/Android/sdk"
+export ANDROID_SDK="/Users/dylan/Library/Android/sdk"
+export ANDROID_NDK="/Users/dylan/Library/Android/android-ndk/android-ndk-r16b"
+export ANDROID_NDK_HOME="/Users/dylan/Library/Android/android-ndk/android-ndk-r16b"
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/tools/bin
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
@@ -52,7 +58,7 @@ export DEFAULT_USER='dylan'
 # source ~/.bin/tmuxinator.zsh
 
 # fastlane
-export PATH="$HOME/.fastlane/bin/fastlane_lib:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 # cd ~/repos
 
@@ -63,3 +69,13 @@ if [ -f '/Users/dylan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dylan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/dylan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/dylan/n/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/dylan/n/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
